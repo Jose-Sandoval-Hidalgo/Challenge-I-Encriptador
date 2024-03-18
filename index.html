@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang es-CL>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Encriptador de texto</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+    <div class="body-grid">
+        <header class="header-grid">
+            <img src="imagenes/Alura-Vector.svg" alt="Logo Alura">
+        </header>
+
+        <main class="main-grid">
+            <form id="input-grid">
+                <div class="area-ingreso">
+                    <textarea name="ingresar-texto" id="texto-ingresado" placeholder="Ingrese el texto aquí" required autofocus></textarea>
+                    <label for="texto-ingresado">
+                        <p class="pie-input">&#9888; Se eliminará tildes y cambiará mayúsculas por minúsculas.</p>
+                    </label>
+                </div>
+                <div id="boton-encriptar">
+                    <button id="encriptador" type="button">Encriptar</button>
+                </div>
+                <div id="boton-desencriptar">
+                    <button id="desencriptador" type="button">Desencriptar</button>
+                </div>
+            </form>
+                
+            <section class="output-grid">
+                <div id="imagen-output">
+                    <img id="muneco" src="imagenes/muneco.png" alt="Esperando texto">
+                </div>
+                <div id="titulo-output">
+                    <h6>Ingresa el texto que desees encriptar o desencriptar</h6>
+                </div>
+                <div id="resultado-output">
+                    <p id="parrafo-output">Ingresa el texto que desees encriptar o desencriptar</p>
+                </div>
+                <div id="boton-copiar">
+                    <button id="copiador" type="button">Copiar</button>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer-grid">
+            <a href="https://github.com/Jose-Sandoval-Hidalgo">
+                <img src="imagenes/github-6980894.svg" alt="GitHub" id="logo-github">
+            </a>
+            <a href="www.linkedin.com/in/jose-sandoval-hidalgo">
+                <img src="imagenes/linkedin-7509708.svg" alt="Linkedin" id="logo-linkedin">
+            </a>
+            <p class="creditos">Creado por José Sandoval Hidalgo</p>
+        </footer>
+
+        <script src="app.js"></script>
+    </div>
+    </body>
+</html>

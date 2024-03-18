@@ -1,0 +1,262 @@
+html{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 2vmin;
+    /* Fija tamaño de texto base con valor relativo a la
+       longitud mínima de la página */
+    font-variation-settings:
+      "slnt" 0; 
+}
+
+.body-grid{
+    display: grid;
+    grid-template-rows: repeat(36, 5svh);
+    /* Fija longitud del cuerpo a ~2 pantallas */
+    grid-template-columns: repeat(20, 5svw);
+    /* Fija ancho de cuerpo a una pantalla exacta */
+    background-color: #F3F5FC;
+    place-items: center center;
+}
+
+.header-grid{
+    grid-area: 1 / 2 / 3 / 20;
+    width: 100%;
+    place-self: center start;
+}
+
+.header-grid img{
+    display: inline;
+    object-fit: cover;
+    max-height: 8svh;
+}
+
+.main-grid{
+    display: grid;
+    grid-area: 3 / 2 / 36 / 20;
+    grid-template-rows: subgrid;
+    /* mantiene tamaños de fila de rejilla padre original */
+    grid-template-columns: subgrid;
+    /* mantiene tamaños de columna de rejilla padre original */
+}
+
+#input-grid{
+    display: grid;
+    grid-area: 1 / 1 / 17 / 19;
+    grid-template-rows: subgrid;
+    /* mantiene tamaños de fila de rejilla padre original */
+    grid-template-columns: subgrid;
+    /* mantiene tamaños de columna de rejilla padre original */
+}
+
+.area-ingreso{
+    grid-area: 1 / 1 / 15 / 19;
+}
+
+#texto-ingresado{
+    vertical-align: top;
+    height: 90%;
+    width: 100%;
+    border-style: none;
+    outline: none;
+    resize:none;
+    background-color: #FCFAF3;
+    font-size: 2rem;
+    color: #0A3871;
+}
+
+#texto-ingresado::placeholder{
+    color: #71430A;
+}
+
+#texto-ingresado::-moz-placeholder {
+    opacity: initial;
+}
+
+.pie-input{
+    margin: 0.5rem 1rem 1rem 1rem;
+    color: black;
+    font-size: 0.75rem;   
+}
+
+.pie-input::first-letter{
+    color:#FF0000;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+#boton-encriptar{
+    grid-area: 15 / 4 / 16 / 8;
+}
+
+#encriptador{
+    width:100%;
+    height: 100%;
+    background-color: #0A3871;
+    color: #F3F5FC;
+    font-size: 1rem;    
+    border-radius: 3vmin;
+    border: 1px solid #8496B6;
+}
+
+#encriptador:hover{
+    background-color: #8496B6;
+    color: #0000FF;
+    transition: all 500ms ;
+}
+
+#boton-desencriptar{
+    grid-area: 15 / 12 / 16 / 16;
+}
+
+#desencriptador{
+    width:100%;
+    height: 100%;
+    background-color: #F3FCF5;
+    color: #0A3871;
+    font-size: 1rem;
+    border-radius: 3vmin;
+    border: 1px solid #8496B6;
+}
+
+#desencriptador:hover{
+    background-color: #8496B6;
+    color: #0000FF;
+    transition: all 500ms ;
+}
+
+.output-grid{
+    display: grid;
+    grid-template-rows: subgrid;
+    /* mantiene tamaños de fila de rejilla padre original */
+    grid-template-columns: subgrid;
+    /* mantiene tamaños de columna de rejilla padre original */
+    grid-area: 17 / 1 / 34 / 19;
+    border: 1px solid #8496B6;
+    border-radius: 32px;
+    background-color: #F5FCF3;
+    text-align: center;
+}
+
+#imagen-output{
+    grid-area: 2 / 2 / 8 / 18;
+}
+
+#muneco{
+    object-fit: cover;
+    max-height: 100%;
+}
+
+#titulo-output{
+    grid-area: 8 / 2 / 10 / 18;
+    place-self: center center;
+    font-size: 1.5rem;
+}
+
+#resultado-output{
+    grid-area: 10 / 2 / 16 / 18;
+    visibility: hidden;
+    font-size: 1.5 rem;
+    place-self: center center;
+    color: #71430A;
+}
+
+#boton-copiar{
+    grid-area: 16 / 8 / 17 / 12;
+    visibility: hidden;
+}
+
+#copiador{
+    width:100%;
+    height: 100%;
+    background-color: #8496B6;
+    color: #0000FF;
+    font-size: 1rem;
+    border-radius: 3vmin;
+    border: 1px solid #0A3871;
+}
+
+#copiador:hover{
+    background-color: #F3FCF5;
+    color: #0A3871;
+    border: 1px solid #8496B6;
+    transition: all 500ms ;
+}
+
+.footer-grid{
+    grid-area: 36 / 2 / 37 / 20;
+    place-self: center start;
+    width: 100%;
+    margin-top: 1svh;
+}
+
+#logo-github{
+    display: inline;
+    object-fit: cover;
+    max-height: 4svh;
+}
+
+#logo-linkedin{
+    display: inline;
+    object-fit: cover;
+    max-height: 4svh;
+}
+
+.creditos{
+    display: inline;
+    font-style: italic;
+    text-align: right;
+    vertical-align: 70%;
+    color: #8496B6;
+}
+
+/* Cambia el diseño de una columna larga, a dos columnas
+en proporción 2/3, sólo cuando el área disponible esta al 
+menos en proporción 4/3 */
+@media screen and (min-aspect-ratio: 4/3){
+    .body-grid{
+        grid-template-rows: repeat(20, 5svh);
+    }
+    .main-grid{
+        grid-area: 3 / 2 / 21 / 20;
+    }
+    #input-grid{
+        grid-area: 2 / 1 / 17 / 12;
+    }
+
+    .area-ingreso{
+        grid-area: 1 / 1 / 15 / 12;
+    }
+
+    #boton-encriptar{
+        grid-area: 15 / 3 / 16 / 5;
+    }
+
+    #boton-desencriptar{
+        grid-area: 15 / 8 / 16 / 10;
+    }
+
+    .output-grid{
+        grid-area: 1 / 13 / 18 / 20;
+    }
+
+    #imagen-output{
+        grid-area: 2 / 2 / 8 / 6;
+    }
+
+    #titulo-output{
+        grid-area: 8 / 2 / 10 / 6;
+    }
+
+    #resultado-output{
+        grid-area: 10 / 2 / 16 / 6;
+    }
+
+    #boton-copiar{
+        grid-area: 16 / 3 / 17 / 5;
+    }
+
+    .footer-grid{
+        grid-area: 20 / 2 / 21 / 20;
+    }
+}
